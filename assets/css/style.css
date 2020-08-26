@@ -1177,11 +1177,13 @@ html {
 }
 
 #tm-preloader-in svg polyline#back {
-    stroke: rgba(246, 81, 106, 0.3);
+    /* stroke: rgba(246, 81, 106, 0.3); */
+    stroke: rgba(81, 196, 246, 0.3);
 }
 
 #tm-preloader-in svg polyline#front {
-    stroke: #f6516a;
+    /* stroke: #f6516a; */
+    stroke: #e3a019;
     stroke-dasharray: 12, 36;
     stroke-dashoffset: 48;
     animation: dash 1s linear infinite;
@@ -1700,7 +1702,7 @@ html {
 }
 .slider-text h1 b,
 .slider-text h1 b i {
-    font-weight: 600;
+    font-weight: 100;
     font-style: initial;
 }
 .slider-text p {
@@ -2227,7 +2229,7 @@ html {
     height: 100%;
     width: 100%;
     background-color: #e3a019;
-    opacity: 0.85;
+    opacity: 0.5;
 }
 .tm-shedule-wrap {
     padding-right: 15%;
