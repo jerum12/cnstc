@@ -25,10 +25,13 @@
 	| 10. Owl Carousel
 	| 11. Portfolio
 	| 12. Magnific Popup
-	| 13. Ajax Contact Form And Appointment
-	| 14. Mailchimp js
-	| 15. Google Map
-	|
+	| 13. Ripple Setup
+	| 14. Ajax Contact Form And Appointment
+	| 15. Mailchimp js
+	| 16. Google Map
+	| 17. Parallax 2
+	| 18. Tweenty Tweenty
+	| 19. Download Catalog
 	*/
 
 	/*--------------------------------------------------------------
@@ -67,6 +70,7 @@
 		$('.tm-video-button').modalVideo();
 		$(".player").YTPlayer();
 		$('.parallax').parallax("50%", 0.3);
+		downloadCatalog();
 	});
 
 	$(window).on('resize', function() {
@@ -527,7 +531,7 @@
   	}
 
    	/*--------------------------------------------------------------
-   		13. Magnific Popup
+   		13. Ripple Setup
   	--------------------------------------------------------------*/
 
   	function rippleSetup() {
@@ -873,6 +877,27 @@
 		no_overlay: true
 	});
 
+	/*--------------------------------------------------------------
+		19. Ajax Download Catalog
+	--------------------------------------------------------------*/
+	// Contact Form
+	function downloadCatalog() {
+
+	    $('.btn-download').on('click', function() {
+			let data =  $(this).attr("id");
+				$.ajax(
+					{
+					type: "POST",
+                    data: ({id: data}),
+					url : 'downloadFile.php',
+					success: function(response){
+						location.href = response;
+					}
+				});
+	        return false;
+	    });
+
+	}
 
 
 })(jQuery); // End of use strict

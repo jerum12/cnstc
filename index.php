@@ -25,12 +25,40 @@
 
 <body data-spy="scroll" data-target=".tm-primary-nav">
     
+ <!-- Load Facebook SDK for JavaScript -->
+ <div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v6.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <!-- Your customer chat code -->
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="132830630725100"
+  theme_color="#e3a019"
+  logged_in_greeting="Hi! We are glad to help you? "
+  logged_out_greeting="Hi! We are glad to help you? ">
+      </div>
+   <!-- END Facebook SDK for JavaScript --> 
     <!-- Start Preloader -->
     <!-- <div id="tm-preloader">
         <div id="tm-preloader-in">
             <div></div><div></div><div></div><div></div><div></div>
         </div>
     </div> -->
+
     <div id="tm-preloader">
         <div>
         
@@ -45,7 +73,7 @@
       </div>
     <!-- End Preloader -->
     
-    <!-- Start Site Header Wrap -->
+    <!-- Start Site Header Menu Wrap -->
     <header>
         <div class="tm-site-header">
             <!-- <div class="tm-header-info-wrap">
@@ -58,9 +86,9 @@
                 <div class="container tm-header-menu-container">
                     <div class="tm-site-branding">
                         <!-- For Image Logo -->
-                        <a href="index-2.html" class="tm-logo-link">
+                        <div class="tm-logo-link">
                             <img src="assets/img/logo_header3.png" alt="" class="tm-logo">
-                        </a>
+                        </div>
                         <!-- For Site Title -->
                         <!-- <span class="tm-site-title">
                         <a href="index.html">Trustlife</a>
@@ -82,10 +110,10 @@
                             </li> -->
                             <li class="menu-item current-menu-item"><a href="#home" class="nav-link">HOME</a></li>
                             <li class="menu-item"><a href="#about" class="nav-link">ABOUT</a></li>
-                            <li class="menu-item"><a href="#department" class="nav-link">PRODUCTS</a></li>
-                            <li class="menu-item"><a href="#doctor" class="nav-link">OUR TEAM</a></li>
+                            <li class="menu-item"><a href="#products" class="nav-link">PRODUCTS</a></li>
+                            <li class="menu-item"><a href="#team" class="nav-link">OUR TEAM</a></li>
                             <li class="menu-item"><a href="#gallery" class="nav-link">GALLERY</a></li>
-                            <li class="menu-item"><a href="#price" class="nav-link">SERVICES</a></li>
+                            <li class="menu-item"><a href="#services" class="nav-link">SERVICES</a></li>
                             <!-- <li class="menu-item menu-item-has-children"><a href="#blog" class="nav-link">BLOG</a>
                                 <ul>
                                     <li class="menu-item"><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
@@ -104,9 +132,9 @@
             </div><!-- .tm-header-menu -->
         </div><!-- .tm-site-header -->
     </header>
-    <!-- End Site Header Wrap -->
+    <!-- End Site Header Menu Wrap -->
 
-    <!-- Start Hero Section -->
+    <!-- Start Hero Main Page Section -->
     <section class="hero tm-bg parallax" id="home" style="background-image: url(assets/img/bg_green.jpg);">
         <div class="container">
             <div class="slider-text">
@@ -134,9 +162,9 @@
             <div class="shape"><i class="fa fa-wheelchair-alt"></i></div>
         </div>
     </section>
-    <!-- End Hero Section -->
+    <!-- End Hero Main Page Section -->
 
-    <!-- Start  -->
+    <!-- Start Milestone Section-->
     <section>
         <div class="empty-space col-md-b100 col-xs-b40"></div>
         <div class="tm-section-heading text-center">
@@ -185,7 +213,7 @@
         </div>
 
     </section>
-    <!-- Start  -->
+    <!-- End Milestone Section  -->
 
     <!-- Start About Secton -->
     <section id="about">
@@ -276,8 +304,8 @@
     </div>
     <!-- End Clients Section -->
     
-    <!-- Start Department Section -->
-    <section class="tm-gray-bg" id="department">
+    <!-- Start Products Section -->
+    <section class="tm-gray-bg" id="products">
         <div class="empty-space col-md-b100 col-xs-b70"></div>
         <div class="tm-section-heading text-center">
             <h2>Our Products</h2>
@@ -313,7 +341,7 @@
                                         </div>
                                         <div class="empty-space col-xs-b25"></div>
                                         <div class="tm-about-btn">
-                                            <a href="#" class="tm-btn1">READ MORE</a>
+                                            <button class="tm-btn1 btn-download" id="dental_catalog">Download Catalog</button>
                                         </div>
                                     </div>
                                 </div>
@@ -335,7 +363,7 @@
                                         </div>
                                         <div class="empty-space col-xs-b25"></div>
                                         <div class="tm-about-btn">
-                                            <a href="#" class="tm-btn1">READ MORE</a>
+                                        <button class="tm-btn1 btn-download" id="neurology_catalog">Download Catalog</button>
                                         </div>
                                     </div>
                                 </div>
@@ -357,7 +385,7 @@
                                         </div>
                                         <div class="empty-space col-xs-b25"></div>
                                         <div class="tm-about-btn">
-                                            <a href="#" class="tm-btn1">READ MORE</a>
+                                            <button class="tm-btn1 btn-download" id="crutches_catalog">Download Catalog</button>
                                         </div>
                                     </div>
                                 </div>
@@ -379,7 +407,7 @@
                                         </div>
                                         <div class="empty-space col-xs-b25"></div>
                                         <div class="tm-about-btn">
-                                            <a href="#" class="tm-btn1">READ MORE</a>
+                                            <button class="tm-btn1 btn-download" id="cardiology_catalog">Download Catalog</button>
                                         </div>
                                     </div>
                                 </div>
@@ -401,7 +429,7 @@
                                         </div>
                                         <div class="empty-space col-xs-b25"></div>
                                         <div class="tm-about-btn">
-                                            <a href="#" class="tm-btn1">READ MORE</a>
+                                            <button class="tm-btn1 btn-download" id="pulmonary_catalog">Download Catalog</button>
                                         </div>
                                     </div>
                                 </div>
@@ -423,7 +451,7 @@
                                         </div>
                                         <div class="empty-space col-xs-b25"></div>
                                         <div class="tm-about-btn">
-                                            <a href="#" class="tm-btn1">READ MORE</a>
+                                            <button class="tm-btn1 btn-download" id="xray_catalog">Download Catalog</button>
                                         </div>
                                     </div>
                                 </div>
@@ -519,7 +547,7 @@
     <!-- End Appointment Section -->
 
     <!-- Start Team Member -->
-    <section id="doctor">
+    <section id="team">
         <div class="empty-space col-md-b100 col-xs-b70"></div>
         <div class="tm-section-heading text-center">
             <h2>Our TEAM</h2>
@@ -527,7 +555,9 @@
             <div class="empty-space col-md-b60 col-xs-b40"></div>
         </div>
         <div class="container">
-            <div class="row">
+
+            <!-- FOR HOVER -->
+            <!-- <div class="row">
                 <div class="col-lg-12">
                     <div class="tm-member-carousel owl-carousel tm-nam-tm-style1  tm-dots1">
                         <div class="tm-team-member">
@@ -560,13 +590,13 @@
                                             <i class="fa fa-skype"></i>
                                         </a>
                                     </div>
-                                </div><!-- .tm-member-social-btn-wrap -->
+                                </div>
                             </div>
                             <div class="tm-member-meta tm-gray-bg text-center">
                                 <h3 class="tm-member-name"><a href="#">Cheryl Santos</a></h3>
                                 <span class="tm-member-speciality">Owner/General Manager</span>
                             </div>
-                        </div><!-- .tm-team-member -->
+                        </div>
                         <div class="tm-team-member">
                             <div class="tm-member-hover">
                                 <a href="#" class="tm-member-thumb">
@@ -597,13 +627,13 @@
                                             <i class="fa fa-skype"></i>
                                         </a>
                                     </div>
-                                </div><!-- .tm-member-social-btn-wrap -->
+                                </div>
                             </div>
                             <div class="tm-member-meta tm-gray-bg text-center">
                                 <h3 class="tm-member-name"><a href="#">Leizel M. Perez</a></h3>
                                 <span class="tm-member-speciality">Biomedical Engineer</span>
                             </div>
-                        </div><!-- .tm-team-member -->
+                        </div>
                         <div class="tm-team-member">
                             <div class="tm-member-hover">
                                 <a href="#" class="tm-member-thumb">
@@ -634,13 +664,13 @@
                                             <i class="fa fa-skype"></i>
                                         </a>
                                     </div>
-                                </div><!-- .tm-member-social-btn-wrap -->
+                                </div>
                             </div>
                             <div class="tm-member-meta tm-gray-bg text-center">
                                 <h3 class="tm-member-name"><a href="#">Jairuss P. Galang</a></h3>
                                 <span class="tm-member-speciality">Biomedical Engineer</span>
                             </div>
-                        </div><!-- .tm-team-member -->
+                        </div>
                         <div class="tm-team-member">
                             <div class="tm-member-hover">
                                 <a href="#" class="tm-member-thumb">
@@ -671,17 +701,118 @@
                                             <i class="fa fa-skype"></i>
                                         </a>
                                     </div>
-                                </div><!-- .tm-member-social-btn-wrap -->
+                                </div>
                             </div>
                             <div class="tm-member-meta tm-gray-bg text-center">
                                 <h3 class="tm-member-name"><a href="#">Raiza Mae C. Salinas</a></h3>
                                 <span class="tm-member-speciality">Biomedical Engineer</span>
                             </div>
-                        </div><!-- .tm-team-member -->
+                        </div>
                         
-                    </div><!-- .member-carousel -->
-                </div><!-- .col -->
-            </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+            <!-- FOR FLIPPER -->
+            <div class="row">
+        	<div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(assets/img/doctor-01.jpg);">
+	                <div class="box">
+	                  <h2>Cheryl Santos</h2>
+	                  <p>Owner / General Manager</p>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem&rdquo;</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background: url(assets/img/doctor-01.jpg);background-size:cover;"></div>
+	                  </div>
+	                  <div class="name align-self-center">Cheryl Santos <span class="position">Owner / General Manager</span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+	        <div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(assets/img/doctor-02.jpg);">
+	                <div class="box">
+	                  <h2>Leizel M. Perez</h2>
+	                  <p>Biomedical Engineer</p>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem&rdquo;</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background: url(assets/img/doctor-02.jpg);background-size:cover;"></div>
+	                  </div>
+	                  <div class="name align-self-center">Leizel M. Perez <span class="position">Biomedical Engineer</span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+	        <div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(assets/img/doctor-03.jpg);">
+	                <div class="box">
+	                  <h2>Jairuss P. Galang</h2>
+	                  <p>Biomedical Engineer</p>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem&rdquo;</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background: url(assets/img/doctor-03.jpg);background-size:cover;"></div>
+	                  </div>
+	                  <div class="name align-self-center">Jairuss P. Galang <span class="position">Biomedical Engineer</span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+	        <div class="col-md-6 col-lg-3 ftco-animate">
+	          <div class="block-2">
+	            <div class="flipper">
+	              <div class="front" style="background-image: url(assets/img/doctor-04.jpg);">
+	                <div class="box">
+	                  <h2>Raiza Mae C. Salinas</h2>
+	                  <p>Biomedical Engineer</p>
+	                </div>
+	              </div>
+	              <div class="back">
+	                <!-- back content -->
+	                <blockquote>
+	                  <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem&rdquo;</p>
+	                </blockquote>
+	                <div class="author d-flex">
+	                  <div class="image mr-3 align-self-center">
+	                    <div class="img" style="background: url(assets/img/doctor-04.jpg);background-size:cover;"></div>
+	                  </div>
+	                  <div class="name align-self-center">Raiza Mae C. Salinas <span class="position">Biomedical Engineer</span></div>
+	                </div>
+	              </div>
+	            </div>
+	          </div> <!-- .flip-container -->
+	        </div>
+        </div>
         </div>
         <div class="empty-space col-md-b100 col-xs-b70"></div>
     </section>
@@ -897,7 +1028,7 @@
     <!-- End Fun Fact Section -->
 
     <!-- Start Pricing Seciton -->
-    <section id="price">
+    <section id="services">
         <div class="empty-space col-md-b100 col-xs-b70"></div>
         <div class="tm-section-heading text-center">
             <h2>SERVICES</h2>
@@ -1065,7 +1196,7 @@
                     <i class="video-icon"></i>
                 </div> -->
             </div><!-- .col -->
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-xs-12">
                 <div class="empty-space col-md-b60 col-xs-b65"></div>
                 <div class="accordian-wrapper">
                     <h2 class="accordian-heading">Frequently Asked Questions</h2>
@@ -1258,42 +1389,51 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div id="tm-alert"></div>
-                    <form action="http://thememarch.com/demo/html/medical/trustlife/assets/php/mail.php" class="row tm-contact-form" method="post"  id="contact-form">
+                    <!-- <form action="http://thememarch.com/demo/html/medical/trustlife/assets/php/mail.php" class="row tm-contact-form" method="post"  id="contact-form">
                         <div class="col-lg-6">
                             <div class="tm-form-field">      
                                 <input type="text" id="name" name="name" required>
                                 <label>Full Name</label>
                             </div>
-                        </div><!-- .col -->
+                        </div>
                         <div class="col-lg-6">
                             <div class="tm-form-field">      
                               <input type="text" id="email" name="email" required>
                               <label>Email Address</label>
                           </div>
-                        </div><!-- .col -->
+                        </div>
                         <div class="col-lg-6">
                             <div class="tm-form-field">      
                                 <input type="text" id="subject" name="subject" required>
                                 <label>Subject</label>
                             </div>
-                        </div><!-- .col -->
+                        </div>
                         <div class="col-lg-6">
                             <div class="tm-form-field">      
                                 <input type="text" id="phone" name="phone" required>
                                 <label>Phone</label>
                             </div>
-                        </div><!-- .col -->
+                        </div>
                         <div class="col-lg-12">
                             <div class="tm-form-field">      
                                 <textarea cols="30" rows="10" id="msg" name="msg" required></textarea>
                                 <label>Your Message</label>
                             </div>
-                        </div><!-- .col -->
+                        </div>
                         <div class="col-lg-12">
                             <button class="tm-btn1" type="submit" id="submit" name="submit"><span>SEND MESSAGE</span></button>
                             <div class="empty-space col-lg-b30"></div>
-                        </div><!-- .col -->
-                    </form>
+                        </div>
+                    </form> -->
+                    <!-- <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
+                        src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=Central%20Neuro%20Systems%20Trading%20Co%20Manila+(Central%20Neuro%20Systems%20Trading%20Co)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                         <a href='https://embedmaps.org/'>add google maps to my website</a>
+                         <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=c546c47644b18aef1b3b05480265c51ccdf0ba20'></script> -->
+
+                         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
+                         src="https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=Central%20Neuro%20Systems%20Trading%20Co%20Manila+(Central%20Neuro%20Systems%20Trading%20Co)&amp;t=k&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> 
+                         <a href='https://embedmaps.org/'>add google maps to my website</a> 
+                         <script type='text/javascript' src='https://maps-generator.com/google-maps-authorization/script.js?id=fcccb6525b6e33efa40364b27ca376af97889368'></script>
                 </div><!-- .col -->
                 <div class="col-lg-4">
                     <div class="empty-space col-md-b0 col-xs-b40"></div>
@@ -1301,21 +1441,19 @@
                         <div class="tm-single-contact">
                             <i class="fa fa-map-marker"></i>
                             <h3>Address</h3>
-                            <p>2855 Speer Blvd, Denver, CO 80211, USA</p>
+                            <p>1758 Malabon Street, Santa Cruz, Manila, 1014 Metro Manila</p>
                         </div>
                         <div class="empty-space col-xs-b25"></div>
                         <div class="tm-single-contact">
                             <i class="fa fa-phone"></i>
                             <h3>Phone</h3>
-                            <p>1-800-915-6270 <br>
-                               1-800-915-6272</p>
+                            <p>02-282818855</p>
                         </div>
                         <div class="empty-space col-xs-b25"></div>
                         <div class="tm-single-contact">
                             <i class="fa fa-envelope"></i>
                             <h3>Email</h3>
-                            <p>info@trustlife.com <br>
-                            Skype: example</p>
+                            <p>cnstc.inquiries@gmail.com</p>
                         </div>
                         <div class="empty-space col-xs-b25"></div>
                     </div>
@@ -1327,9 +1465,10 @@
     <!-- End Contact Section -->
 
     <!-- Start Map Section -->
-    <div id="tm-map"></div>
+    <!-- <div id="tm-map"></div> -->
     <!-- End Map Section -->
 
+   
 
 
     <!-- Start Footer -->
