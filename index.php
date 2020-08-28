@@ -87,7 +87,7 @@
                     <div class="tm-site-branding">
                         <!-- For Image Logo -->
                         <div class="tm-logo-link">
-                            <img src="assets/img/logo_header3.png" alt="" class="tm-logo">
+                            <img src="assets/img/logo_header7.png" alt="" class="tm-logo" style="max-width:70%;position:relative;left:50px">
                         </div>
                         <!-- For Site Title -->
                         <!-- <span class="tm-site-title">
